@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather');
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 0;
+}
+
+#title-area {
+    background-color: #dddddd;
+    flex-grow: 0;
+    padding: 1em 0 0.5em 2em;
+}
+
+h1 {
+    font-family: 'Merriweather', serif;
+    font-size: 3em;
+    font-weight: 400;
+}
+
+#members-area {
+    background-color: #dddddd;
+    flex-grow: 0;
+    padding: 0 0 1em 2em;
+}
+
+#message-area {
+    flex-grow: 1;
+    margin: 0;
+    overflow-y: scroll;
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    font-size: 1em;
+    list-style-type: none;
+    padding: 0.5em 0.5em 0.5em 2em;
+}
+
+li:nth-child(even) {
+    background-color: #fafafa;
+}
+
+#form-area {
+    background-color: #dddddd;
+    border: none;
+    flex-grow: 0;
+    margin: 0;
+    padding: 1em;
+}

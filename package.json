@@ -1,0 +1,15 @@
+{
+  "name": "nobel-app",
+  "version": "0.0.1",
+  "description": "A basic node app to ping the lab and check if anyone there",
+  "dependencies": {
+    "bignumber.js": "^3.0.1",
+    "body-parser": "^1.16.1",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.10.2",
+    "forever": "^0.15.3",
+    "open": "0.0.5",
+    "request": "^2.79.0",
+    "socket.io": "^1.7.2"
+  }
+}
