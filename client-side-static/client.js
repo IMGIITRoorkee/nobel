@@ -54,9 +54,12 @@ function init() {
                 url: window.location.origin + '/members',
                 success: function (responseData) {
                     if (responseData.indexOf(',') === -1) {
-                        $('#members-area').html('<i class="user icon"></i><strong>The only member is ' + responseData + '</strong>');
+                        $('#members-area').html('<i class="user icon"></i><strong>The only member is ' + responseData + '</strong>&nbsp;&nbsp;<a href="https://channeli.in/logout" id="logout" class="ui blue button">Logout of Channel i</a>');
                     } else {
-                        $('#members-area').html('<i class="users icon"></i><strong>Members are ' + responseData + '</strong>');
+                        $('#members-area').html('<i class="users icon"></i><strong>Members are ' + responseData + '</strong>&nbsp;&nbsp;<a href="https://channeli.in/logout" id="logout" class="ui blue button">Logout of Channel i</a>');
+                    }
+                    if (user === 'IMGLAB') {
+                        $('#logout').delete();
                     }
                 }
             });
@@ -75,9 +78,12 @@ function init() {
 
             socket.on('members_update', function(members) {
                 if (members.indexOf(',') === -1) {
-                    $('#members-area').html('<i class="user icon"></i><strong>The only member is ' + members + '</strong>');
+                    $('#members-area').html('<i class="user icon"></i><strong>The only member is ' + members + '</strong>&nbsp;&nbsp;<a href="https://channeli.in/logout" id="logout" class="ui blue button">Logout of Channel i</a>');
                 } else {
-                    $('#members-area').html('<i class="users icon"></i><strong>Members are ' + members + '</strong>');
+                    $('#members-area').html('<i class="users icon"></i><strong>Members are ' + members + '</strong>&nbsp;&nbsp;<a href="https://channeli.in/logout" id="logout" class="ui blue button">Logout of Channel i</a>');
+                }
+                if (user === 'IMGLAB') {
+                    $('#logout').delete();
                 }
             });
         }
