@@ -9,6 +9,9 @@
 <body>
 <div id="title-area">
     <h1>Nobel</h1>
+    <div id="logout-wrapper">
+        <button class="ui blue button" id="logout" onclick="logOut()"><i class="sign out icon"></i>Log out of Channel i</button>
+    </div>
 </div>
 <div id="members-area"></div>
 <div id="message-area">
@@ -21,8 +24,8 @@
         <button class="ui blue button"><i class="send icon"></i>Send</button>
     </form>
 </div>
-<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
-<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js"></script>
+<script src="http://code.jquery.com/jquery.js"></script>
 <script src="../../client.js">
 </script>
 </body>
