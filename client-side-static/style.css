@@ -13,20 +13,28 @@ body {
 
 #title-area {
     background-color: #dddddd;
+    display: flex;
+    flex-direction: row;
     flex-grow: 0;
-    padding: 1em 0 0.5em 2em;
+    align-items: center;
+    padding: 1em 1em 0.5em 1em;
 }
 
 h1 {
+    flex-grow: 1;
     font-family: 'Merriweather', serif;
     font-size: 3em;
     font-weight: 400;
 }
 
+#logout-wrapper {
+    flex-grow: 0;
+}
+
 #members-area {
     background-color: #dddddd;
     flex-grow: 0;
-    padding: 0 0 1em 2em;
+    padding: 0 0 1em 1em;
 }
 
 #message-area {
