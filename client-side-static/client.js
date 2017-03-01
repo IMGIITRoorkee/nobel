@@ -1,6 +1,8 @@
 var user;
 var socket;
 
+// Visibility checking code
+
 var hidden, visibilityChange, shown, doNotHidden;
 if (typeof document.hidden !== "undefined") {
     hidden = "hidden";
@@ -33,6 +35,8 @@ if(document.addEventListener) {
     });
 }
 
+// Actual JS
+
 $('form').submit(submitForm);
 
 function init() {
@@ -45,6 +49,10 @@ function init() {
         },
         success: function (responseData) {
             user = responseData.name;
+
+            if (user === 'IMGLAB') {
+                $('#logout').remove();
+            }
             if (!user) {
                 return;
             }
@@ -54,12 +62,9 @@ function init() {
                 url: window.location.origin + '/members',
                 success: function (responseData) {
                     if (responseData.indexOf(',') === -1) {
-                        $('#members-area').html('<i class="user icon"></i><strong>The only member is ' + responseData + '</strong>&nbsp;&nbsp;<a href="https://channeli.in/logout" id="logout" class="ui blue button">Logout of Channel i</a>');
+                        $('#members-area').html('<i class="user icon"></i><strong>The only member is ' + responseData + '</strong>');
                     } else {
-                        $('#members-area').html('<i class="users icon"></i><strong>Members are ' + responseData + '</strong>&nbsp;&nbsp;<a href="https://channeli.in/logout" id="logout" class="ui blue button">Logout of Channel i</a>');
-                    }
-                    if (user === 'IMGLAB') {
-                        $('#logout').delete();
+                        $('#members-area').html('<i class="users icon"></i><strong>Members are ' + responseData + '</strong>');
                     }
                 }
             });
@@ -78,12 +83,9 @@ function init() {
 
             socket.on('members_update', function(members) {
                 if (members.indexOf(',') === -1) {
-                    $('#members-area').html('<i class="user icon"></i><strong>The only member is ' + members + '</strong>&nbsp;&nbsp;<a href="https://channeli.in/logout" id="logout" class="ui blue button">Logout of Channel i</a>');
+                    $('#members-area').html('<i class="user icon"></i><strong>The only member is ' + members + '</strong>');
                 } else {
-                    $('#members-area').html('<i class="users icon"></i><strong>Members are ' + members + '</strong>&nbsp;&nbsp;<a href="https://channeli.in/logout" id="logout" class="ui blue button">Logout of Channel i</a>');
-                }
-                if (user === 'IMGLAB') {
-                    $('#logout').delete();
+                    $('#members-area').html('<i class="users icon"></i><strong>Members are ' + members + '</strong>');
                 }
             });
         }
@@ -96,3 +98,8 @@ function submitForm() {
     $m.val('');
     return false;
 }
+
+function logOut() {
+    window.location = 'http://www.channeli.in/logout/';
+}
+
