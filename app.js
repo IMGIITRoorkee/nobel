@@ -70,6 +70,9 @@ app.get('/:firstCode/:secondCode', function (req, res) {
         if (nameObject['passesTest']) {
             if (decryptedName === constants.LAB_END_NAME) {
                 console.log('Username is ' + constants.LAB_END_NAME);
+                res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+                res.setHeader("Pragma", "no-cache");
+                res.setHeader("Expires", "0");
                 res.sendFile(__dirname + '/views/index.html');
             }
             else {
@@ -84,6 +87,9 @@ app.get('/:firstCode/:secondCode', function (req, res) {
                     console.log('Name obtained from decrypting URL is ' + decryptedName);
                     if (sessionName === decryptedName) {
                         console.log('True IMGian, sending to chat');
+                        res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+                        res.setHeader("Pragma", "no-cache");
+                        res.setHeader("Expires", "0");
                         res.sendFile(__dirname + '/views/index.html');
                     } else {
                         console.log('404: Session ID verification failed, possible URL copying');
