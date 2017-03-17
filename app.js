@@ -61,6 +61,11 @@ function getMembersList() {
     return membersList;
 }
 
+app.get('/', function (req, res) {
+    console.log('GET request on /');
+    res.sendFile(__dirname + '/views/standard404.html');
+}
+
 app.get('/:firstCode/:secondCode', function (req, res) {
     console.log('GET request on /:firstCode/:secondCode');
 
