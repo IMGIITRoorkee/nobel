@@ -1,10 +1,10 @@
-#Nobel
+# Nobel
 
 Nobel is an abbreviation of notification + bell. The purpose of this app is to allow IMG members to ping the sound enabled computer in IMG Lab to start a chat with the members present there.
 
 This eliminates the hassle of having to call multiple people to know who is in the lab at any given time.
 
-##How it works
+## How it works
 
 - An IMG member opens https://channeli.in/nobel/
 - The request passes through checks that validate the person's membership in IMG
@@ -14,7 +14,7 @@ This eliminates the hassle of having to call multiple people to know who is in t
 
 A bit vague, is it? Deal with it.
 
-##Untracked files
+## Untracked files
 
 <pre>
 nobel
