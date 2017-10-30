@@ -14,6 +14,14 @@ This eliminates the hassle of having to call multiple people to know who is in t
 
 A bit vague, is it? Deal with it.
 
+## Technologies used
+
+- Framework: `Express`
+- Realtime communications: `Socket.IO`
+- Language: `JavaScript`
+- Application server: `NGINX` + `pm2`
+- Files server: `NGINX`
+
 ## Untracked files
 
 <pre>
